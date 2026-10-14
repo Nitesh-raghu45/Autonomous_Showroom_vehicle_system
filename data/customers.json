@@ -1,0 +1,1246 @@
+[
+  {
+    "customer": {
+      "customer_id": "10001",
+      "title": "Mr",
+      "name": "Amit Verma",
+      "mobile_no": "9960013389",
+      "alt_mobile_no": null,
+      "email": "customer10001@example.com"
+    },
+    "enquiry": {
+      "enquiry_id": "E-028E205C",
+      "salesperson": "priya.singh",
+      "created_at": "2026-06-24T00:00:00",
+      "status": "open",
+      "new_or_used": "used",
+      "interested_make": "BMW",
+      "interested_model": "523D"
+    },
+    "contact_log": [
+      {
+        "log_date": "2026-09-08T00:00:00",
+        "contact_type": "SHOWROOM_VISIT",
+        "notes": "Confirmed test drive availability."
+      }
+    ],
+    "quotation": null,
+    "scheduled_contact": {
+      "sched_date": "2026-09-21T00:00:00",
+      "sched_hour": 9,
+      "sched_minute": 15,
+      "contact_type": "DEMO",
+      "status": "cancelled"
+    }
+  },
+  {
+    "customer": {
+      "customer_id": "10002",
+      "title": "Mr",
+      "name": "Kavita Mehta",
+      "mobile_no": "9559407816",
+      "alt_mobile_no": null,
+      "email": "customer10002@example.com"
+    },
+    "enquiry": {
+      "enquiry_id": "E-02518CEB",
+      "salesperson": "rahul.kapoor",
+      "created_at": "2026-06-27T00:00:00",
+      "status": "closed_lost",
+      "new_or_used": "new",
+      "interested_make": "Maruti Suzuki",
+      "interested_model": "Swift"
+    },
+    "contact_log": [
+      {
+        "log_date": "2026-08-28T00:00:00",
+        "contact_type": "EMAIL",
+        "notes": "Confirmed budget range, interested in automatic."
+      }
+    ],
+    "quotation": {
+      "proposal_id": "P-16006",
+      "status": "accepted",
+      "delivery_date": "2026-09-19T00:00:00",
+      "vehicle": {
+        "make": "Maruti Suzuki",
+        "model": "Swift",
+        "stock_id": "1875"
+      },
+      "cost_breakdown": [
+        {
+          "description": "Vehicle sale price",
+          "sale_amount": 1476395,
+          "vat_amount": 102953
+        }
+      ]
+    },
+    "scheduled_contact": null
+  },
+  {
+    "customer": {
+      "customer_id": "10003",
+      "title": "Mr",
+      "name": "Suresh Reddy",
+      "mobile_no": "9928327648",
+      "alt_mobile_no": null,
+      "email": "customer10003@example.com"
+    },
+    "enquiry": {
+      "enquiry_id": "E-01E5B417",
+      "salesperson": "rahul.kapoor",
+      "created_at": "2026-09-08T00:00:00",
+      "status": "closed_won",
+      "new_or_used": "used",
+      "interested_make": "Kia",
+      "interested_model": "Seltos"
+    },
+    "contact_log": [
+      {
+        "log_date": "2026-08-20T00:00:00",
+        "contact_type": "CALL",
+        "notes": "Asked about EMI/finance options."
+      }
+    ],
+    "quotation": {
+      "proposal_id": "P-62581",
+      "status": "pending",
+      "delivery_date": null,
+      "vehicle": {
+        "make": "Kia",
+        "model": "Seltos",
+        "stock_id": "1935"
+      },
+      "cost_breakdown": [
+        {
+          "description": "Vehicle sale price",
+          "sale_amount": 2878925,
+          "vat_amount": 214981
+        }
+      ]
+    },
+    "scheduled_contact": null
+  },
+  {
+    "customer": {
+      "customer_id": "10004",
+      "title": "Ms",
+      "name": "Vikram Chawla",
+      "mobile_no": "9969653287",
+      "alt_mobile_no": null,
+      "email": "customer10004@example.com"
+    },
+    "enquiry": {
+      "enquiry_id": "E-05BD2605",
+      "salesperson": "arjun.mehta",
+      "created_at": "2026-09-01T00:00:00",
+      "status": "closed_won",
+      "new_or_used": "used",
+      "interested_make": "Kia",
+      "interested_model": "Seltos"
+    },
+    "contact_log": [
+      {
+        "log_date": "2026-08-26T00:00:00",
+        "contact_type": "EMAIL",
+        "notes": "Wants to compare with a competitor model first."
+      }
+    ],
+    "quotation": {
+      "proposal_id": "P-88172",
+      "status": "sent",
+      "delivery_date": null,
+      "vehicle": {
+        "make": "Kia",
+        "model": "Seltos",
+        "stock_id": "1610"
+      },
+      "cost_breakdown": [
+        {
+          "description": "Vehicle sale price",
+          "sale_amount": 2463143,
+          "vat_amount": 327408
+        }
+      ]
+    },
+    "scheduled_contact": null
+  },
+  {
+    "customer": {
+      "customer_id": "10005",
+      "title": "Ms",
+      "name": "Arjun Joshi",
+      "mobile_no": "9627048281",
+      "alt_mobile_no": "9489325288",
+      "email": "customer10005@example.com"
+    },
+    "enquiry": {
+      "enquiry_id": "E-04E44D99",
+      "salesperson": "arjun.mehta",
+      "created_at": "2026-07-01T00:00:00",
+      "status": "closed_lost",
+      "new_or_used": "new",
+      "interested_make": "BMW",
+      "interested_model": "523D"
+    },
+    "contact_log": [
+      {
+        "log_date": "2026-08-31T00:00:00",
+        "contact_type": "CALL",
+        "notes": "Confirmed budget range, interested in automatic."
+      }
+    ],
+    "quotation": {
+      "proposal_id": "P-57576",
+      "status": "pending",
+      "delivery_date": null,
+      "vehicle": {
+        "make": "BMW",
+        "model": "523D",
+        "stock_id": "1246"
+      },
+      "cost_breakdown": [
+        {
+          "description": "Vehicle sale price",
+          "sale_amount": 2879667,
+          "vat_amount": 91291
+        }
+      ]
+    },
+    "scheduled_contact": null
+  },
+  {
+    "customer": {
+      "customer_id": "10006",
+      "title": "Mrs",
+      "name": "Rohan Malhotra",
+      "mobile_no": "9489638346",
+      "alt_mobile_no": "9578713315",
+      "email": "customer10006@example.com"
+    },
+    "enquiry": {
+      "enquiry_id": "E-04DB91F3",
+      "salesperson": "arjun.mehta",
+      "created_at": "2026-07-02T00:00:00",
+      "status": "closed_won",
+      "new_or_used": "new",
+      "interested_make": "Kia",
+      "interested_model": "Seltos"
+    },
+    "contact_log": [],
+    "quotation": {
+      "proposal_id": "P-87128",
+      "status": "accepted",
+      "delivery_date": null,
+      "vehicle": {
+        "make": "Kia",
+        "model": "Seltos",
+        "stock_id": "1724"
+      },
+      "cost_breakdown": [
+        {
+          "description": "Vehicle sale price",
+          "sale_amount": 3147037,
+          "vat_amount": 80866
+        }
+      ]
+    },
+    "scheduled_contact": {
+      "sched_date": "2026-09-20T00:00:00",
+      "sched_hour": 10,
+      "sched_minute": 0,
+      "contact_type": "DEMO",
+      "status": "completed"
+    }
+  },
+  {
+    "customer": {
+      "customer_id": "10007",
+      "title": "Dr",
+      "name": "Rohan Joshi",
+      "mobile_no": "9376311656",
+      "alt_mobile_no": null,
+      "email": "customer10007@example.com"
+    },
+    "enquiry": {
+      "enquiry_id": "E-05F2A785",
+      "salesperson": "arjun.mehta",
+      "created_at": "2026-06-21T00:00:00",
+      "status": "open",
+      "new_or_used": "used",
+      "interested_make": "Hyundai",
+      "interested_model": "i20"
+    },
+    "contact_log": [
+      {
+        "log_date": "2026-09-14T00:00:00",
+        "contact_type": "SHOWROOM_VISIT",
+        "notes": "Asked about EMI/finance options."
+      }
+    ],
+    "quotation": {
+      "proposal_id": "P-24322",
+      "status": "accepted",
+      "delivery_date": null,
+      "vehicle": {
+        "make": "Hyundai",
+        "model": "i20",
+        "stock_id": "1549"
+      },
+      "cost_breakdown": [
+        {
+          "description": "Vehicle sale price",
+          "sale_amount": 2381621,
+          "vat_amount": 123495
+        }
+      ]
+    },
+    "scheduled_contact": {
+      "sched_date": "2026-09-23T00:00:00",
+      "sched_hour": 11,
+      "sched_minute": 30,
+      "contact_type": "DEMO",
+      "status": "completed"
+    }
+  },
+  {
+    "customer": {
+      "customer_id": "10008",
+      "title": "Mr",
+      "name": "Neha Rao",
+      "mobile_no": "9132677360",
+      "alt_mobile_no": null,
+      "email": "customer10008@example.com"
+    },
+    "enquiry": {
+      "enquiry_id": "E-04FFA775",
+      "salesperson": "arjun.mehta",
+      "created_at": "2026-07-28T00:00:00",
+      "status": "closed_lost",
+      "new_or_used": "used",
+      "interested_make": "BMW",
+      "interested_model": "218D"
+    },
+    "contact_log": [
+      {
+        "log_date": "2026-08-17T00:00:00",
+        "contact_type": "SHOWROOM_VISIT",
+        "notes": "Asked about EMI/finance options."
+      }
+    ],
+    "quotation": null,
+    "scheduled_contact": {
+      "sched_date": "2026-09-23T00:00:00",
+      "sched_hour": 17,
+      "sched_minute": 45,
+      "contact_type": "DEMO",
+      "status": "pending"
+    }
+  },
+  {
+    "customer": {
+      "customer_id": "10009",
+      "title": "Mr",
+      "name": "Vikram Reddy",
+      "mobile_no": "9978820812",
+      "alt_mobile_no": null,
+      "email": "customer10009@example.com"
+    },
+    "enquiry": {
+      "enquiry_id": "E-053ABFC6",
+      "salesperson": "arjun.mehta",
+      "created_at": "2026-06-21T00:00:00",
+      "status": "closed_won",
+      "new_or_used": "new",
+      "interested_make": "Hyundai",
+      "interested_model": "i20"
+    },
+    "contact_log": [],
+    "quotation": {
+      "proposal_id": "P-62923",
+      "status": "sent",
+      "delivery_date": "2026-10-05T00:00:00",
+      "vehicle": {
+        "make": "Hyundai",
+        "model": "i20",
+        "stock_id": "1252"
+      },
+      "cost_breakdown": [
+        {
+          "description": "Vehicle sale price",
+          "sale_amount": 2928162,
+          "vat_amount": 361699
+        }
+      ]
+    },
+    "scheduled_contact": null
+  },
+  {
+    "customer": {
+      "customer_id": "10010",
+      "title": "Mrs",
+      "name": "Ananya Nair",
+      "mobile_no": "9534624751",
+      "alt_mobile_no": null,
+      "email": "customer10010@example.com"
+    },
+    "enquiry": {
+      "enquiry_id": "E-05DAE35C",
+      "salesperson": "arjun.mehta",
+      "created_at": "2026-09-06T00:00:00",
+      "status": "closed_won",
+      "new_or_used": "used",
+      "interested_make": "BMW",
+      "interested_model": "218D"
+    },
+    "contact_log": [
+      {
+        "log_date": "2026-08-30T00:00:00",
+        "contact_type": "WHATSAPP",
+        "notes": "Requested more photos of the vehicle."
+      }
+    ],
+    "quotation": {
+      "proposal_id": "P-55745",
+      "status": "sent",
+      "delivery_date": "2026-09-28T00:00:00",
+      "vehicle": {
+        "make": "BMW",
+        "model": "218D",
+        "stock_id": "1291"
+      },
+      "cost_breakdown": [
+        {
+          "description": "Vehicle sale price",
+          "sale_amount": 1161638,
+          "vat_amount": 279734
+        }
+      ]
+    },
+    "scheduled_contact": {
+      "sched_date": "2026-09-30T00:00:00",
+      "sched_hour": 17,
+      "sched_minute": 30,
+      "contact_type": "DEMO",
+      "status": "cancelled"
+    }
+  },
+  {
+    "customer": {
+      "customer_id": "10011",
+      "title": "Mrs",
+      "name": "Simran Chawla",
+      "mobile_no": "9411824493",
+      "alt_mobile_no": "9348740164",
+      "email": "customer10011@example.com"
+    },
+    "enquiry": {
+      "enquiry_id": "E-05F05F29",
+      "salesperson": "arjun.mehta",
+      "created_at": "2026-09-15T00:00:00",
+      "status": "closed_lost",
+      "new_or_used": "new",
+      "interested_make": "Toyota",
+      "interested_model": "Fortuner"
+    },
+    "contact_log": [
+      {
+        "log_date": "2026-08-22T00:00:00",
+        "contact_type": "EMAIL",
+        "notes": "Asked about EMI/finance options."
+      }
+    ],
+    "quotation": {
+      "proposal_id": "P-31178",
+      "status": "expired",
+      "delivery_date": "2026-09-30T00:00:00",
+      "vehicle": {
+        "make": "Toyota",
+        "model": "Fortuner",
+        "stock_id": "1574"
+      },
+      "cost_breakdown": [
+        {
+          "description": "Vehicle sale price",
+          "sale_amount": 540557,
+          "vat_amount": 108654
+        }
+      ]
+    },
+    "scheduled_contact": {
+      "sched_date": "2026-09-18T00:00:00",
+      "sched_hour": 11,
+      "sched_minute": 0,
+      "contact_type": "DEMO",
+      "status": "completed"
+    }
+  },
+  {
+    "customer": {
+      "customer_id": "10012",
+      "title": "Mr",
+      "name": "Deepak Joshi",
+      "mobile_no": "9533158692",
+      "alt_mobile_no": "9322602563",
+      "email": "customer10012@example.com"
+    },
+    "enquiry": {
+      "enquiry_id": "E-019D98A8",
+      "salesperson": "rahul.kapoor",
+      "created_at": "2026-08-26T00:00:00",
+      "status": "open",
+      "new_or_used": "used",
+      "interested_make": "Hyundai",
+      "interested_model": "Creta"
+    },
+    "contact_log": [
+      {
+        "log_date": "2026-09-03T00:00:00",
+        "contact_type": "CALL",
+        "notes": "Wants to compare with a competitor model first."
+      }
+    ],
+    "quotation": null,
+    "scheduled_contact": {
+      "sched_date": "2026-09-20T00:00:00",
+      "sched_hour": 12,
+      "sched_minute": 45,
+      "contact_type": "DEMO",
+      "status": "completed"
+    }
+  },
+  {
+    "customer": {
+      "customer_id": "10013",
+      "title": "Mr",
+      "name": "Divya Rao",
+      "mobile_no": "9458685014",
+      "alt_mobile_no": null,
+      "email": "customer10013@example.com"
+    },
+    "enquiry": {
+      "enquiry_id": "E-00C90D7A",
+      "salesperson": "rahul.kapoor",
+      "created_at": "2026-09-11T00:00:00",
+      "status": "open",
+      "new_or_used": "new",
+      "interested_make": "Hyundai",
+      "interested_model": "i20"
+    },
+    "contact_log": [
+      {
+        "log_date": "2026-08-27T00:00:00",
+        "contact_type": "SHOWROOM_VISIT",
+        "notes": "Asked about EMI/finance options."
+      }
+    ],
+    "quotation": {
+      "proposal_id": "P-51114",
+      "status": "expired",
+      "delivery_date": "2026-10-03T00:00:00",
+      "vehicle": {
+        "make": "Hyundai",
+        "model": "i20",
+        "stock_id": "1118"
+      },
+      "cost_breakdown": [
+        {
+          "description": "Vehicle sale price",
+          "sale_amount": 2115626,
+          "vat_amount": 352298
+        }
+      ]
+    },
+    "scheduled_contact": null
+  },
+  {
+    "customer": {
+      "customer_id": "10014",
+      "title": "Mrs",
+      "name": "Vikram Reddy",
+      "mobile_no": "9561595148",
+      "alt_mobile_no": null,
+      "email": "customer10014@example.com"
+    },
+    "enquiry": {
+      "enquiry_id": "E-009C0D37",
+      "salesperson": "neha.iyer",
+      "created_at": "2026-08-05T00:00:00",
+      "status": "open",
+      "new_or_used": "used",
+      "interested_make": "BMW",
+      "interested_model": "523D"
+    },
+    "contact_log": [
+      {
+        "log_date": "2026-08-24T00:00:00",
+        "contact_type": "WHATSAPP",
+        "notes": "Confirmed test drive availability."
+      }
+    ],
+    "quotation": {
+      "proposal_id": "P-26683",
+      "status": "accepted",
+      "delivery_date": null,
+      "vehicle": {
+        "make": "BMW",
+        "model": "523D",
+        "stock_id": "1962"
+      },
+      "cost_breakdown": [
+        {
+          "description": "Vehicle sale price",
+          "sale_amount": 2090250,
+          "vat_amount": 141240
+        }
+      ]
+    },
+    "scheduled_contact": {
+      "sched_date": "2026-09-26T00:00:00",
+      "sched_hour": 18,
+      "sched_minute": 30,
+      "contact_type": "DEMO",
+      "status": "completed"
+    }
+  },
+  {
+    "customer": {
+      "customer_id": "10015",
+      "title": "Ms",
+      "name": "Anjali Rao",
+      "mobile_no": "9777387214",
+      "alt_mobile_no": null,
+      "email": "customer10015@example.com"
+    },
+    "enquiry": {
+      "enquiry_id": "E-02E42FEB",
+      "salesperson": "rahul.kapoor",
+      "created_at": "2026-09-04T00:00:00",
+      "status": "closed_won",
+      "new_or_used": "used",
+      "interested_make": "BMW",
+      "interested_model": "523D"
+    },
+    "contact_log": [
+      {
+        "log_date": "2026-08-25T00:00:00",
+        "contact_type": "WHATSAPP",
+        "notes": "Requested more photos of the vehicle."
+      }
+    ],
+    "quotation": null,
+    "scheduled_contact": {
+      "sched_date": "2026-09-29T00:00:00",
+      "sched_hour": 12,
+      "sched_minute": 15,
+      "contact_type": "DEMO",
+      "status": "pending"
+    }
+  },
+  {
+    "customer": {
+      "customer_id": "10016",
+      "title": "Dr",
+      "name": "Ananya Iyer",
+      "mobile_no": "9763201632",
+      "alt_mobile_no": "9870831727",
+      "email": "customer10016@example.com"
+    },
+    "enquiry": {
+      "enquiry_id": "E-043D47BB",
+      "salesperson": "rahul.kapoor",
+      "created_at": "2026-07-21T00:00:00",
+      "status": "open",
+      "new_or_used": "new",
+      "interested_make": "Kia",
+      "interested_model": "Seltos"
+    },
+    "contact_log": [
+      {
+        "log_date": "2026-08-20T00:00:00",
+        "contact_type": "SHOWROOM_VISIT",
+        "notes": "Requested more photos of the vehicle."
+      }
+    ],
+    "quotation": {
+      "proposal_id": "P-72216",
+      "status": "expired",
+      "delivery_date": null,
+      "vehicle": {
+        "make": "Kia",
+        "model": "Seltos",
+        "stock_id": "1253"
+      },
+      "cost_breakdown": [
+        {
+          "description": "Vehicle sale price",
+          "sale_amount": 3174545,
+          "vat_amount": 195391
+        }
+      ]
+    },
+    "scheduled_contact": null
+  },
+  {
+    "customer": {
+      "customer_id": "10017",
+      "title": "Mrs",
+      "name": "Rahul Bose",
+      "mobile_no": "9455812236",
+      "alt_mobile_no": "9316658760",
+      "email": "customer10017@example.com"
+    },
+    "enquiry": {
+      "enquiry_id": "E-059C2B2F",
+      "salesperson": "priya.singh",
+      "created_at": "2026-07-24T00:00:00",
+      "status": "open",
+      "new_or_used": "used",
+      "interested_make": "Toyota",
+      "interested_model": "Fortuner"
+    },
+    "contact_log": [
+      {
+        "log_date": "2026-08-18T00:00:00",
+        "contact_type": "CALL",
+        "notes": "Confirmed test drive availability."
+      }
+    ],
+    "quotation": null,
+    "scheduled_contact": {
+      "sched_date": "2026-09-23T00:00:00",
+      "sched_hour": 16,
+      "sched_minute": 0,
+      "contact_type": "DEMO",
+      "status": "completed"
+    }
+  },
+  {
+    "customer": {
+      "customer_id": "10018",
+      "title": "Mrs",
+      "name": "Divya Bose",
+      "mobile_no": "9734670656",
+      "alt_mobile_no": "9729806990",
+      "email": "customer10018@example.com"
+    },
+    "enquiry": {
+      "enquiry_id": "E-04E6DD15",
+      "salesperson": "arjun.mehta",
+      "created_at": "2026-06-25T00:00:00",
+      "status": "open",
+      "new_or_used": "used",
+      "interested_make": "Kia",
+      "interested_model": "Sportage"
+    },
+    "contact_log": [
+      {
+        "log_date": "2026-09-11T00:00:00",
+        "contact_type": "SHOWROOM_VISIT",
+        "notes": "Requested more photos of the vehicle."
+      }
+    ],
+    "quotation": {
+      "proposal_id": "P-16590",
+      "status": "pending",
+      "delivery_date": null,
+      "vehicle": {
+        "make": "Kia",
+        "model": "Sportage",
+        "stock_id": "1216"
+      },
+      "cost_breakdown": [
+        {
+          "description": "Vehicle sale price",
+          "sale_amount": 2407147,
+          "vat_amount": 221361
+        }
+      ]
+    },
+    "scheduled_contact": {
+      "sched_date": "2026-09-22T00:00:00",
+      "sched_hour": 15,
+      "sched_minute": 30,
+      "contact_type": "DEMO",
+      "status": "completed"
+    }
+  },
+  {
+    "customer": {
+      "customer_id": "10019",
+      "title": "Mrs",
+      "name": "Arjun Rao",
+      "mobile_no": "9100330923",
+      "alt_mobile_no": null,
+      "email": "customer10019@example.com"
+    },
+    "enquiry": {
+      "enquiry_id": "E-00C048EC",
+      "salesperson": "arjun.mehta",
+      "created_at": "2026-07-05T00:00:00",
+      "status": "closed_won",
+      "new_or_used": "used",
+      "interested_make": "BMW",
+      "interested_model": "218D"
+    },
+    "contact_log": [],
+    "quotation": {
+      "proposal_id": "P-70952",
+      "status": "pending",
+      "delivery_date": "2026-09-22T00:00:00",
+      "vehicle": {
+        "make": "BMW",
+        "model": "218D",
+        "stock_id": "1620"
+      },
+      "cost_breakdown": [
+        {
+          "description": "Vehicle sale price",
+          "sale_amount": 3046980,
+          "vat_amount": 110048
+        }
+      ]
+    },
+    "scheduled_contact": {
+      "sched_date": "2026-09-29T00:00:00",
+      "sched_hour": 11,
+      "sched_minute": 30,
+      "contact_type": "DEMO",
+      "status": "pending"
+    }
+  },
+  {
+    "customer": {
+      "customer_id": "10020",
+      "title": "Mrs",
+      "name": "Deepak Sharma",
+      "mobile_no": "9149190586",
+      "alt_mobile_no": "9185067165",
+      "email": "customer10020@example.com"
+    },
+    "enquiry": {
+      "enquiry_id": "E-03C4EFA9",
+      "salesperson": "neha.iyer",
+      "created_at": "2026-08-27T00:00:00",
+      "status": "open",
+      "new_or_used": "used",
+      "interested_make": "Maruti Suzuki",
+      "interested_model": "Swift"
+    },
+    "contact_log": [],
+    "quotation": {
+      "proposal_id": "P-33086",
+      "status": "pending",
+      "delivery_date": "2026-10-16T00:00:00",
+      "vehicle": {
+        "make": "Maruti Suzuki",
+        "model": "Swift",
+        "stock_id": "1551"
+      },
+      "cost_breakdown": [
+        {
+          "description": "Vehicle sale price",
+          "sale_amount": 2527935,
+          "vat_amount": 293727
+        }
+      ]
+    },
+    "scheduled_contact": {
+      "sched_date": "2026-09-23T00:00:00",
+      "sched_hour": 18,
+      "sched_minute": 30,
+      "contact_type": "DEMO",
+      "status": "completed"
+    }
+  },
+  {
+    "customer": {
+      "customer_id": "10021",
+      "title": "Dr",
+      "name": "Tanvi Iyer",
+      "mobile_no": "9507527354",
+      "alt_mobile_no": null,
+      "email": "customer10021@example.com"
+    },
+    "enquiry": {
+      "enquiry_id": "E-0433D494",
+      "salesperson": "rahul.kapoor",
+      "created_at": "2026-07-06T00:00:00",
+      "status": "open",
+      "new_or_used": "used",
+      "interested_make": "BMW",
+      "interested_model": "218D"
+    },
+    "contact_log": [
+      {
+        "log_date": "2026-08-30T00:00:00",
+        "contact_type": "EMAIL",
+        "notes": "Confirmed budget range, interested in automatic."
+      }
+    ],
+    "quotation": null,
+    "scheduled_contact": {
+      "sched_date": "2026-09-20T00:00:00",
+      "sched_hour": 15,
+      "sched_minute": 45,
+      "contact_type": "DEMO",
+      "status": "cancelled"
+    }
+  },
+  {
+    "customer": {
+      "customer_id": "10022",
+      "title": "Ms",
+      "name": "Rahul Iyer",
+      "mobile_no": "9363495788",
+      "alt_mobile_no": null,
+      "email": "customer10022@example.com"
+    },
+    "enquiry": {
+      "enquiry_id": "E-05C365A3",
+      "salesperson": "rahul.kapoor",
+      "created_at": "2026-08-01T00:00:00",
+      "status": "open",
+      "new_or_used": "used",
+      "interested_make": "Renault",
+      "interested_model": "Duster"
+    },
+    "contact_log": [
+      {
+        "log_date": "2026-09-07T00:00:00",
+        "contact_type": "WHATSAPP",
+        "notes": "Asked about EMI/finance options."
+      }
+    ],
+    "quotation": {
+      "proposal_id": "P-40217",
+      "status": "sent",
+      "delivery_date": "2026-09-27T00:00:00",
+      "vehicle": {
+        "make": "Renault",
+        "model": "Duster",
+        "stock_id": "1122"
+      },
+      "cost_breakdown": [
+        {
+          "description": "Vehicle sale price",
+          "sale_amount": 2747576,
+          "vat_amount": 147071
+        }
+      ]
+    },
+    "scheduled_contact": null
+  },
+  {
+    "customer": {
+      "customer_id": "10023",
+      "title": "Ms",
+      "name": "Vikram Iyer",
+      "mobile_no": "9134352408",
+      "alt_mobile_no": null,
+      "email": "customer10023@example.com"
+    },
+    "enquiry": {
+      "enquiry_id": "E-02CEDBEF",
+      "salesperson": "arjun.mehta",
+      "created_at": "2026-09-09T00:00:00",
+      "status": "closed_lost",
+      "new_or_used": "used",
+      "interested_make": "Renault",
+      "interested_model": "Duster"
+    },
+    "contact_log": [
+      {
+        "log_date": "2026-08-24T00:00:00",
+        "contact_type": "EMAIL",
+        "notes": "Wants to compare with a competitor model first."
+      }
+    ],
+    "quotation": {
+      "proposal_id": "P-23446",
+      "status": "sent",
+      "delivery_date": "2026-10-02T00:00:00",
+      "vehicle": {
+        "make": "Renault",
+        "model": "Duster",
+        "stock_id": "1490"
+      },
+      "cost_breakdown": [
+        {
+          "description": "Vehicle sale price",
+          "sale_amount": 2347460,
+          "vat_amount": 228628
+        }
+      ]
+    },
+    "scheduled_contact": {
+      "sched_date": "2026-09-19T00:00:00",
+      "sched_hour": 9,
+      "sched_minute": 30,
+      "contact_type": "DEMO",
+      "status": "completed"
+    }
+  },
+  {
+    "customer": {
+      "customer_id": "10024",
+      "title": "Mrs",
+      "name": "Priya Rao",
+      "mobile_no": "9941318699",
+      "alt_mobile_no": "9386774964",
+      "email": "customer10024@example.com"
+    },
+    "enquiry": {
+      "enquiry_id": "E-0487AF52",
+      "salesperson": "arjun.mehta",
+      "created_at": "2026-06-29T00:00:00",
+      "status": "open",
+      "new_or_used": "used",
+      "interested_make": "BMW",
+      "interested_model": "218D"
+    },
+    "contact_log": [
+      {
+        "log_date": "2026-08-22T00:00:00",
+        "contact_type": "EMAIL",
+        "notes": "Requested more photos of the vehicle."
+      }
+    ],
+    "quotation": null,
+    "scheduled_contact": null
+  },
+  {
+    "customer": {
+      "customer_id": "10025",
+      "title": "Dr",
+      "name": "Arjun Chawla",
+      "mobile_no": "9974034471",
+      "alt_mobile_no": "9493618324",
+      "email": "customer10025@example.com"
+    },
+    "enquiry": {
+      "enquiry_id": "E-0283D4EF",
+      "salesperson": "priya.singh",
+      "created_at": "2026-09-06T00:00:00",
+      "status": "open",
+      "new_or_used": "new",
+      "interested_make": "BMW",
+      "interested_model": "218D"
+    },
+    "contact_log": [],
+    "quotation": null,
+    "scheduled_contact": null
+  },
+  {
+    "customer": {
+      "customer_id": "10026",
+      "title": "Ms",
+      "name": "Sneha Bose",
+      "mobile_no": "9887719065",
+      "alt_mobile_no": "9013990490",
+      "email": "customer10026@example.com"
+    },
+    "enquiry": {
+      "enquiry_id": "E-041BF962",
+      "salesperson": "priya.singh",
+      "created_at": "2026-07-17T00:00:00",
+      "status": "open",
+      "new_or_used": "used",
+      "interested_make": "Maruti Suzuki",
+      "interested_model": "Swift"
+    },
+    "contact_log": [
+      {
+        "log_date": "2026-08-17T00:00:00",
+        "contact_type": "WHATSAPP",
+        "notes": "Requested more photos of the vehicle."
+      }
+    ],
+    "quotation": null,
+    "scheduled_contact": {
+      "sched_date": "2026-09-26T00:00:00",
+      "sched_hour": 15,
+      "sched_minute": 45,
+      "contact_type": "DEMO",
+      "status": "pending"
+    }
+  },
+  {
+    "customer": {
+      "customer_id": "10027",
+      "title": "Dr",
+      "name": "Ritu Mehta",
+      "mobile_no": "9468071545",
+      "alt_mobile_no": null,
+      "email": "customer10027@example.com"
+    },
+    "enquiry": {
+      "enquiry_id": "E-032A1D7D",
+      "salesperson": "neha.iyer",
+      "created_at": "2026-07-12T00:00:00",
+      "status": "open",
+      "new_or_used": "used",
+      "interested_make": "Kia",
+      "interested_model": "Sportage"
+    },
+    "contact_log": [
+      {
+        "log_date": "2026-08-25T00:00:00",
+        "contact_type": "SHOWROOM_VISIT",
+        "notes": "Wants to compare with a competitor model first."
+      }
+    ],
+    "quotation": {
+      "proposal_id": "P-17104",
+      "status": "accepted",
+      "delivery_date": "2026-10-06T00:00:00",
+      "vehicle": {
+        "make": "Kia",
+        "model": "Sportage",
+        "stock_id": "1774"
+      },
+      "cost_breakdown": [
+        {
+          "description": "Vehicle sale price",
+          "sale_amount": 2590831,
+          "vat_amount": 377894
+        }
+      ]
+    },
+    "scheduled_contact": null
+  },
+  {
+    "customer": {
+      "customer_id": "10028",
+      "title": "Dr",
+      "name": "Manoj Bose",
+      "mobile_no": "9109324808",
+      "alt_mobile_no": null,
+      "email": "customer10028@example.com"
+    },
+    "enquiry": {
+      "enquiry_id": "E-02BB84E1",
+      "salesperson": "priya.singh",
+      "created_at": "2026-09-01T00:00:00",
+      "status": "open",
+      "new_or_used": "new",
+      "interested_make": "BMW",
+      "interested_model": "523D"
+    },
+    "contact_log": [
+      {
+        "log_date": "2026-09-12T00:00:00",
+        "contact_type": "EMAIL",
+        "notes": "Wants to compare with a competitor model first."
+      }
+    ],
+    "quotation": {
+      "proposal_id": "P-48254",
+      "status": "pending",
+      "delivery_date": null,
+      "vehicle": {
+        "make": "BMW",
+        "model": "523D",
+        "stock_id": "1494"
+      },
+      "cost_breakdown": [
+        {
+          "description": "Vehicle sale price",
+          "sale_amount": 2480633,
+          "vat_amount": 177785
+        }
+      ]
+    },
+    "scheduled_contact": {
+      "sched_date": "2026-09-24T00:00:00",
+      "sched_hour": 17,
+      "sched_minute": 15,
+      "contact_type": "DEMO",
+      "status": "completed"
+    }
+  },
+  {
+    "customer": {
+      "customer_id": "10029",
+      "title": "Ms",
+      "name": "Vikram Pillai",
+      "mobile_no": "9044997278",
+      "alt_mobile_no": null,
+      "email": "customer10029@example.com"
+    },
+    "enquiry": {
+      "enquiry_id": "E-01278F16",
+      "salesperson": "rahul.kapoor",
+      "created_at": "2026-07-07T00:00:00",
+      "status": "open",
+      "new_or_used": "new",
+      "interested_make": "Honda",
+      "interested_model": "City"
+    },
+    "contact_log": [
+      {
+        "log_date": "2026-09-01T00:00:00",
+        "contact_type": "WHATSAPP",
+        "notes": "Requested more photos of the vehicle."
+      }
+    ],
+    "quotation": null,
+    "scheduled_contact": {
+      "sched_date": "2026-09-28T00:00:00",
+      "sched_hour": 12,
+      "sched_minute": 45,
+      "contact_type": "DEMO",
+      "status": "pending"
+    }
+  },
+  {
+    "customer": {
+      "customer_id": "10030",
+      "title": "Dr",
+      "name": "Tanvi Bose",
+      "mobile_no": "9270289517",
+      "alt_mobile_no": null,
+      "email": "customer10030@example.com"
+    },
+    "enquiry": {
+      "enquiry_id": "E-03243687",
+      "salesperson": "neha.iyer",
+      "created_at": "2026-09-14T00:00:00",
+      "status": "closed_won",
+      "new_or_used": "new",
+      "interested_make": "Kia",
+      "interested_model": "Sportage"
+    },
+    "contact_log": [
+      {
+        "log_date": "2026-09-02T00:00:00",
+        "contact_type": "EMAIL",
+        "notes": "Confirmed budget range, interested in automatic."
+      }
+    ],
+    "quotation": {
+      "proposal_id": "P-71537",
+      "status": "pending",
+      "delivery_date": null,
+      "vehicle": {
+        "make": "Kia",
+        "model": "Sportage",
+        "stock_id": "1709"
+      },
+      "cost_breakdown": [
+        {
+          "description": "Vehicle sale price",
+          "sale_amount": 2167165,
+          "vat_amount": 390701
+        }
+      ]
+    },
+    "scheduled_contact": {
+      "sched_date": "2026-09-18T00:00:00",
+      "sched_hour": 14,
+      "sched_minute": 45,
+      "contact_type": "DEMO",
+      "status": "completed"
+    }
+  }
+]

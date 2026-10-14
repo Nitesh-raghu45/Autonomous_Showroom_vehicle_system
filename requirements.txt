@@ -1,0 +1,12 @@
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+httpx==0.28.1
+redis==5.2.1
+python-dotenv==1.0.1
+pydantic==2.10.4
+slowapi==0.1.9
+python-multipart==0.0.9
+tzdata>=2024.1
+# Orchestration + history/LLM layer (tested versions; langgraph also pulls in langsmith for optional tracing)
+langgraph==1.2.12
+langchain-core==1.6.6

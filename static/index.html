@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Customer Assist</title>
+<style>
+  :root {
+    --bg: #0f1115; --panel: #171a21; --line: #272b34; --text: #e6e8ec;
+    --muted: #8b93a3; --accent: #4f8cff; --warm: #f0a04b; --ok: #4ade80;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 15px/1.55 ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    display: flex; justify-content: center; padding: 24px 16px;
+  }
+  .app { width: 100%; max-width: 820px; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  .sub { color: var(--muted); font-size: 13px; margin-bottom: 18px; }
+  .bar { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
+  input, button, select {
+    font: inherit; border-radius: 8px; border: 1px solid var(--line);
+    background: var(--panel); color: var(--text); padding: 10px 12px;
+  }
+  input { flex: 1; min-width: 140px; }
+  input:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  button { cursor: pointer; background: var(--accent); border-color: var(--accent); color: #06122b; font-weight: 600; }
+  button.ghost { background: var(--panel); color: var(--text); border-color: var(--line); font-weight: 400; }
+  button:disabled { opacity: .5; cursor: not-allowed; }
+  #status { font-size: 13px; color: var(--muted); margin-bottom: 12px; min-height: 20px; }
+  #status b { color: var(--text); }
+  #chat {
+    border: 1px solid var(--line); border-radius: 12px; background: var(--panel);
+    padding: 16px; min-height: 320px; max-height: 58vh; overflow-y: auto;
+  }
+  .msg { margin-bottom: 16px; }
+  .who { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+  .body { white-space: pre-wrap; word-wrap: break-word; }
+  .msg.user .body { color: var(--accent); }
+  .tag {
+    display: inline-block; font-size: 11px; padding: 2px 7px; border-radius: 999px;
+    border: 1px solid var(--line); color: var(--muted); margin-right: 6px; margin-top: 8px;
+  }
+  .tag.cache { color: var(--ok); border-color: #1f5133; }
+  .tag.model { color: var(--warm); border-color: #4a3620; }
+  .err { color: #ff6b6b; }
+  .hint { color: var(--muted); font-size: 12px; margin-top: 10px; }
+  .hint code { background: #0b0d12; padding: 1px 5px; border-radius: 4px; }
+</style>
+</head>
+<body>
+<div class="app">
+  <h1>Customer Assist</h1>
+  <div class="sub">Enter a customer number, then ask anything about that customer's record.</div>
+
+  <div class="bar">
+    <input id="customer" placeholder="Customer number (e.g. 10007) or mobile" value="10001" />
+    <button id="load">Load</button>
+    <button id="reset" class="ghost">New session</button>
+  </div>
+
+  <div id="status">No customer loaded.</div>
+
+  <div id="chat"></div>
+
+  <div class="bar" style="margin-top:14px">
+    <input id="question" placeholder="What is the delivery date on his quotation?" disabled />
+    <button id="send" disabled>Ask</button>
+  </div>
+  <div class="hint">
+    Try: <code>what car is he interested in</code> · <code>what is the grand total</code> ·
+    <code>when is the next appointment</code> · <code>summarise this customer</code>
+  </div>
+</div>
+
+<script>
+const $ = (id) => document.getElementById(id);
+let sessionId = null, customerId = null, busy = false;
+
+function addMsg(role, text = "") {
+  const wrap = document.createElement("div");
+  wrap.className = "msg " + role;
+  wrap.innerHTML = `<div class="who">${role === "user" ? "You" : "Assistant"}</div>`;
+  const body = document.createElement("div");
+  body.className = "body";
+  body.textContent = text;
+  wrap.appendChild(body);
+  $("chat").appendChild(wrap);
+  $("chat").scrollTop = $("chat").scrollHeight;
+  return wrap;
+}
+
+async function loadCustomer() {
+  const number = $("customer").value.trim();
+  if (!number) return;
+  $("status").textContent = "Loading…";
+  try {
+    const res = await fetch("/session/start", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ customer_number: number }),
+    });
+    if (!res.ok) throw new Error((await res.json()).detail || res.statusText);
+    const data = await res.json();
+    sessionId = data.session_id;
+    customerId = data.customer_id;
+    $("chat").innerHTML = "";
+    $("status").innerHTML = `Talking about <b>${data.customer_name}</b> (ID ${data.customer_id}) · session ${data.session_id.slice(0, 8)}`;
+    $("question").disabled = false;
+    $("send").disabled = false;
+    $("question").focus();
+  } catch (e) {
+    $("status").innerHTML = `<span class="err">${e.message}</span>`;
+  }
+}
+
+async function ask() {
+  const question = $("question").value.trim();
+  if (!question || busy) return;
+  busy = true;
+  $("send").disabled = true;
+  $("question").value = "";
+  addMsg("user", question);
+
+  const wrap = addMsg("assistant", "");
+  const body = wrap.querySelector(".body");
+
+  try {
+    const res = await fetch("/chat/stream", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ session_id: sessionId, customer_number: customerId, question }),
+    });
+
+    const reader = res.body.getReader();
+    const decoder = new TextDecoder();
+    let buffer = "";
+
+    while (true) {
+      const { value, done } = await reader.read();
+      if (done) break;
+      buffer += decoder.decode(value, { stream: true });
+      const frames = buffer.split("\n\n");
+      buffer = frames.pop();
+
+      for (const frame of frames) {
+        let event = "message", data = "{}";
+        for (const line of frame.split("\n")) {
+          if (line.startsWith("event:")) event = line.slice(6).trim();
+          else if (line.startsWith("data:")) data = line.slice(5).trim();
+        }
+        const payload = JSON.parse(data || "{}");
+
+        if (event === "session") sessionId = payload.session_id;
+        else if (event === "token") {
+          body.textContent += payload.text;
+          $("chat").scrollTop = $("chat").scrollHeight;
+        } else if (event === "error") {
+          body.innerHTML = `<span class="err">${payload.message}</span>`;
+        } else if (event === "done") {
+          const tags = document.createElement("div");
+          const fromCache = payload.source === "answer_cache";
+          tags.innerHTML =
+            `<span class="tag ${fromCache ? "cache" : "model"}">${fromCache ? "served from Redis" : "generated"}</span>` +
+            `<span class="tag">${payload.latency_ms} ms</span>` +
+            (payload.usage
+              ? `<span class="tag">${payload.usage.prompt_tokens} prompt / ${payload.usage.completion_tokens} out</span>` +
+                `<span class="tag ${payload.prompt_cache_hit_tokens ? "cache" : ""}">${payload.prompt_cache_hit_tokens} prompt-cached</span>`
+              : "");
+          wrap.appendChild(tags);
+        }
+      }
+    }
+  } catch (e) {
+    body.innerHTML = `<span class="err">${e.message}</span>`;
+  } finally {
+    busy = false;
+    $("send").disabled = false;
+    $("question").focus();
+  }
+}
+
+$("load").onclick = loadCustomer;
+$("send").onclick = ask;
+$("reset").onclick = async () => {
+  if (sessionId) await fetch("/session/" + sessionId, { method: "DELETE" });
+  sessionId = null;
+  $("chat").innerHTML = "";
+  $("status").textContent = "Session cleared. Load a customer to start again.";
+  $("question").disabled = true;
+  $("send").disabled = true;
+};
+$("customer").addEventListener("keydown", (e) => { if (e.key === "Enter") loadCustomer(); });
+$("question").addEventListener("keydown", (e) => { if (e.key === "Enter") ask(); });
+</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+[
+  {"stock_id": "S-1001", "make": "Maruti Suzuki", "model": "Swift", "variant": "ZXi AMT", "year": 2024, "type": "new", "color": "Pearl Arctic White", "fuel": "Petrol", "transmission": "Automatic", "price": 948000, "mileage_km": 0},
+  {"stock_id": "S-1002", "make": "Maruti Suzuki", "model": "Swift", "variant": "VXi", "year": 2024, "type": "new", "color": "Sizzling Red", "fuel": "Petrol", "transmission": "Manual", "price": 756000, "mileage_km": 0},
+  {"stock_id": "S-1003", "make": "Maruti Suzuki", "model": "Baleno", "variant": "Alpha CVT", "year": 2024, "type": "new", "color": "Grandeur Grey", "fuel": "Petrol", "transmission": "Automatic", "price": 1036000, "mileage_km": 0},
+  {"stock_id": "S-1004", "make": "Maruti Suzuki", "model": "Baleno", "variant": "Delta", "year": 2023, "type": "used", "color": "Nexa Blue", "fuel": "Petrol", "transmission": "Manual", "price": 782000, "mileage_km": 18000},
+  {"stock_id": "S-1005", "make": "Maruti Suzuki", "model": "Dzire", "variant": "ZXi Plus AMT", "year": 2024, "type": "new", "color": "Oxford Blue", "fuel": "Petrol", "transmission": "Automatic", "price": 1041000, "mileage_km": 0},
+  {"stock_id": "S-1006", "make": "Maruti Suzuki", "model": "Ertiga", "variant": "ZXi Plus", "year": 2023, "type": "used", "color": "Auburn Red", "fuel": "CNG", "transmission": "Manual", "price": 1180000, "mileage_km": 32000},
+  {"stock_id": "S-1007", "make": "Maruti Suzuki", "model": "Grand Vitara", "variant": "Zeta+ Hybrid", "year": 2024, "type": "new", "color": "Stellar Frost", "fuel": "Hybrid", "transmission": "Automatic", "price": 2200000, "mileage_km": 0},
+  {"stock_id": "S-1008", "make": "Maruti Suzuki", "model": "Fronx", "variant": "Alpha Turbo AT", "year": 2024, "type": "new", "color": "Earthen Brown", "fuel": "Petrol", "transmission": "Automatic", "price": 1268000, "mileage_km": 0},
+
+  {"stock_id": "S-1009", "make": "Hyundai", "model": "i20", "variant": "Asta (O) IVT", "year": 2024, "type": "new", "color": "Titan Grey", "fuel": "Petrol", "transmission": "Automatic", "price": 1100000, "mileage_km": 0},
+  {"stock_id": "S-1010", "make": "Hyundai", "model": "Creta", "variant": "SX(O) Diesel", "year": 2024, "type": "new", "color": "Abyss Black Pearl", "fuel": "Diesel", "transmission": "Automatic", "price": 2000000, "mileage_km": 0},
+  {"stock_id": "S-1011", "make": "Hyundai", "model": "Creta", "variant": "SX Diesel", "year": 2023, "type": "used", "color": "Typhoon Silver", "fuel": "Diesel", "transmission": "Manual", "price": 1580000, "mileage_km": 24000},
+  {"stock_id": "S-1012", "make": "Hyundai", "model": "Venue", "variant": "SX+ DCT", "year": 2024, "type": "new", "color": "Ranger Khaki", "fuel": "Petrol", "transmission": "Automatic", "price": 1325000, "mileage_km": 0},
+  {"stock_id": "S-1013", "make": "Hyundai", "model": "Verna", "variant": "SX(O) IVT", "year": 2024, "type": "new", "color": "Atlas White", "fuel": "Petrol", "transmission": "Automatic", "price": 1783000, "mileage_km": 0},
+  {"stock_id": "S-1014", "make": "Hyundai", "model": "Tucson", "variant": "Signature AWD", "year": 2023, "type": "used", "color": "Magnetic Silver", "fuel": "Petrol", "transmission": "Automatic", "price": 3100000, "mileage_km": 15000},
+  {"stock_id": "S-1015", "make": "Hyundai", "model": "Exter", "variant": "SX AMT CNG", "year": 2024, "type": "new", "color": "Starry Night", "fuel": "CNG", "transmission": "Automatic", "price": 936000, "mileage_km": 0},
+
+  {"stock_id": "S-1016", "make": "Tata", "model": "Nexon", "variant": "Creative Plus Dark AMT", "year": 2024, "type": "new", "color": "Flame Red", "fuel": "Petrol", "transmission": "Automatic", "price": 1399000, "mileage_km": 0},
+  {"stock_id": "S-1017", "make": "Tata", "model": "Nexon EV", "variant": "Max LR", "year": 2024, "type": "new", "color": "Pristine White", "fuel": "Electric", "transmission": "Automatic", "price": 2000000, "mileage_km": 0},
+  {"stock_id": "S-1018", "make": "Tata", "model": "Punch", "variant": "Adventure AMT", "year": 2024, "type": "new", "color": "Tropical Mist", "fuel": "Petrol", "transmission": "Automatic", "price": 965000, "mileage_km": 0},
+  {"stock_id": "S-1019", "make": "Tata", "model": "Harrier", "variant": "XZA+ Dark", "year": 2024, "type": "new", "color": "Orcus White", "fuel": "Diesel", "transmission": "Automatic", "price": 2550000, "mileage_km": 0},
+  {"stock_id": "S-1020", "make": "Tata", "model": "Safari", "variant": "Gold+ Dark", "year": 2023, "type": "used", "color": "Coral Red", "fuel": "Diesel", "transmission": "Automatic", "price": 2200000, "mileage_km": 20000},
+  {"stock_id": "S-1021", "make": "Tata", "model": "Altroz", "variant": "XZ Plus Dark", "year": 2024, "type": "new", "color": "Avenue White", "fuel": "Petrol", "transmission": "Manual", "price": 1020000, "mileage_km": 0},
+  {"stock_id": "S-1022", "make": "Tata", "model": "Curvv EV", "variant": "Empowered Plus", "year": 2024, "type": "new", "color": "Pristine White", "fuel": "Electric", "transmission": "Automatic", "price": 2100000, "mileage_km": 0},
+
+  {"stock_id": "S-1023", "make": "Kia", "model": "Seltos", "variant": "GTX Plus AWD", "year": 2024, "type": "new", "color": "Intense Red", "fuel": "Petrol", "transmission": "Automatic", "price": 2200000, "mileage_km": 0},
+  {"stock_id": "S-1024", "make": "Kia", "model": "Seltos", "variant": "HTE", "year": 2022, "type": "used", "color": "Glacier White Pearl", "fuel": "Petrol", "transmission": "Manual", "price": 1450000, "mileage_km": 38000},
+  {"stock_id": "S-1025", "make": "Kia", "model": "Sonet", "variant": "GTX Plus DCT", "year": 2024, "type": "new", "color": "Aurora Black Pearl", "fuel": "Petrol", "transmission": "Automatic", "price": 1568000, "mileage_km": 0},
+  {"stock_id": "S-1026", "make": "Kia", "model": "Carens", "variant": "Luxury Plus 7 AT", "year": 2024, "type": "new", "color": "Pewter Olive", "fuel": "Petrol", "transmission": "Automatic", "price": 1960000, "mileage_km": 0},
+  {"stock_id": "S-1027", "make": "Kia", "model": "EV6", "variant": "GT-Line AWD", "year": 2023, "type": "used", "color": "Moonscape", "fuel": "Electric", "transmission": "Automatic", "price": 5800000, "mileage_km": 12000},
+  {"stock_id": "S-1028", "make": "Kia", "model": "Carnival", "variant": "Limousine Plus", "year": 2024, "type": "new", "color": "Gravity Grey", "fuel": "Diesel", "transmission": "Automatic", "price": 3800000, "mileage_km": 0},
+
+  {"stock_id": "S-1029", "make": "BMW", "model": "3 Series", "variant": "330i M Sport", "year": 2024, "type": "new", "color": "Alpine White", "fuel": "Petrol", "transmission": "Automatic", "price": 5700000, "mileage_km": 0},
+  {"stock_id": "S-1030", "make": "BMW", "model": "523D", "variant": "Luxury Line", "year": 2023, "type": "used", "color": "Mineral White", "fuel": "Diesel", "transmission": "Automatic", "price": 4200000, "mileage_km": 28000},
+  {"stock_id": "S-1031", "make": "BMW", "model": "523D", "variant": "Sport Line", "year": 2022, "type": "used", "color": "Carbon Black", "fuel": "Diesel", "transmission": "Automatic", "price": 3800000, "mileage_km": 42000},
+  {"stock_id": "S-1032", "make": "BMW", "model": "X1", "variant": "sDrive20i xLine", "year": 2024, "type": "new", "color": "Mineral White", "fuel": "Petrol", "transmission": "Automatic", "price": 4800000, "mileage_km": 0},
+  {"stock_id": "S-1033", "make": "BMW", "model": "X5", "variant": "xDrive40i", "year": 2024, "type": "new", "color": "Phytonic Blue", "fuel": "Petrol", "transmission": "Automatic", "price": 9500000, "mileage_km": 0},
+  {"stock_id": "S-1034", "make": "BMW", "model": "5 Series", "variant": "530i M Sport", "year": 2024, "type": "new", "color": "Brooklyn Grey", "fuel": "Petrol", "transmission": "Automatic", "price": 7300000, "mileage_km": 0},
+  {"stock_id": "S-1035", "make": "BMW", "model": "iX", "variant": "xDrive50", "year": 2023, "type": "used", "color": "Phytonic Blue", "fuel": "Electric", "transmission": "Automatic", "price": 10200000, "mileage_km": 9000},
+
+  {"stock_id": "S-1036", "make": "MG", "model": "Hector", "variant": "Sharp Pro", "year": 2024, "type": "new", "color": "Starry Black", "fuel": "Petrol", "transmission": "Automatic", "price": 2200000, "mileage_km": 0},
+  {"stock_id": "S-1037", "make": "MG", "model": "ZS EV", "variant": "Excite Pro", "year": 2024, "type": "new", "color": "Aurora Silver", "fuel": "Electric", "transmission": "Automatic", "price": 2499000, "mileage_km": 0},
+  {"stock_id": "S-1038", "make": "MG", "model": "Gloster", "variant": "Savvy 6STR", "year": 2023, "type": "used", "color": "Candy White", "fuel": "Diesel", "transmission": "Automatic", "price": 3600000, "mileage_km": 22000},
+
+  {"stock_id": "S-1039", "make": "Toyota", "model": "Innova Crysta", "variant": "GX 7STR", "year": 2024, "type": "new", "color": "Silver Metallic", "fuel": "Diesel", "transmission": "Manual", "price": 2075000, "mileage_km": 0},
+  {"stock_id": "S-1040", "make": "Toyota", "model": "Fortuner", "variant": "Legender 4WD", "year": 2023, "type": "used", "color": "Phantom Brown", "fuel": "Diesel", "transmission": "Automatic", "price": 3800000, "mileage_km": 30000},
+  {"stock_id": "S-1041", "make": "Toyota", "model": "Urban Cruiser Hyryder", "variant": "V CVT Hybrid", "year": 2024, "type": "new", "color": "Enticing Silver", "fuel": "Hybrid", "transmission": "Automatic", "price": 2000000, "mileage_km": 0},
+
+  {"stock_id": "S-1042", "make": "Honda", "model": "City", "variant": "ZX CVT", "year": 2024, "type": "new", "color": "Lunar Silver Metallic", "fuel": "Petrol", "transmission": "Automatic", "price": 1572000, "mileage_km": 0},
+  {"stock_id": "S-1043", "make": "Honda", "model": "Amaze", "variant": "VX CVT", "year": 2024, "type": "new", "color": "Meteoroid Grey", "fuel": "Petrol", "transmission": "Automatic", "price": 879000, "mileage_km": 0},
+  {"stock_id": "S-1044", "make": "Honda", "model": "City e:HEV", "variant": "Hybrid ZX", "year": 2023, "type": "used", "color": "Platinum White Pearl", "fuel": "Hybrid", "transmission": "Automatic", "price": 2000000, "mileage_km": 18000},
+
+  {"stock_id": "S-1045", "make": "Mahindra", "model": "Scorpio-N", "variant": "Z8 L Diesel MT 4WD", "year": 2024, "type": "new", "color": "Red Rage", "fuel": "Diesel", "transmission": "Manual", "price": 2465000, "mileage_km": 0},
+  {"stock_id": "S-1046", "make": "Mahindra", "model": "XUV700", "variant": "AX7 L Luxury Diesel AT", "year": 2024, "type": "new", "color": "Midnight Black", "fuel": "Diesel", "transmission": "Automatic", "price": 2799000, "mileage_km": 0},
+  {"stock_id": "S-1047", "make": "Mahindra", "model": "Thar", "variant": "LX Hard Top Diesel AT 4WD", "year": 2024, "type": "new", "color": "Stealth Black", "fuel": "Diesel", "transmission": "Automatic", "price": 1838000, "mileage_km": 0},
+  {"stock_id": "S-1048", "make": "Mahindra", "model": "BE 6e", "variant": "Pack Three", "year": 2024, "type": "new", "color": "Crimson Red", "fuel": "Electric", "transmission": "Automatic", "price": 2600000, "mileage_km": 0}
+]

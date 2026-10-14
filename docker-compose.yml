@@ -1,0 +1,75 @@
+# App + Redis (CPU only).            docker compose up --build
+# + self-hosted model on an NVIDIA GPU:   docker compose --profile vllm up --build     (or --profile sglang)
+# + nginx in front (SSE-safe):            add   --profile edge
+#
+# NOTE: this compose file was written against the documented vLLM / SGLang / nginx images and
+# flags but has NOT been run in this repo's CI (no GPU / Docker there). Smoke-test it on the L4 box.
+services:
+  redis:
+    image: redis:7-alpine
+    command: ["redis-server", "--appendonly", "yes", "--appendfsync", "everysec", "--maxmemory-policy", "noeviction"]
+    volumes: ["redis-data:/data"]
+    restart: unless-stopped
+
+  api:
+    build:
+      context: .
+      args:
+        WITH_SEMANTIC: ${WITH_SEMANTIC:-0}      # 1 = bake the MiniLM router into the image
+    env_file: .env
+    environment:
+      REDIS_URL: redis://redis:6379/0
+      LOCAL_LLM_BASE_URL: http://llm:8001/v1
+    depends_on: [redis]
+    ports: ["8000:8000"]
+    restart: unless-stopped
+
+  llm:
+    profiles: ["vllm"]
+    image: vllm/vllm-openai:latest
+    ipc: host
+    command: >
+      --model Qwen/Qwen3-4B-Instruct-2507-FP8
+      --served-model-name Qwen/Qwen3-4B-Instruct-2507-FP8
+      --port 8001
+      --max-model-len 8192
+      --gpu-memory-utilization 0.90
+      --max-num-seqs 64
+      --enable-prefix-caching
+    volumes: ["hf-cache:/root/.cache/huggingface"]
+    deploy:
+      resources:
+        reservations:
+          devices: [{ driver: nvidia, count: 1, capabilities: [gpu] }]
+    restart: unless-stopped
+
+  llm-sglang:
+    profiles: ["sglang"]
+    image: lmsysorg/sglang:latest
+    ipc: host
+    command: >
+      python3 -m sglang.launch_server
+      --model-path Qwen/Qwen3-4B-Instruct-2507-FP8
+      --served-model-name Qwen/Qwen3-4B-Instruct-2507-FP8
+      --host 0.0.0.0 --port 8001
+      --context-length 8192
+      --mem-fraction-static 0.85
+    volumes: ["hf-cache:/root/.cache/huggingface"]
+    deploy:
+      resources:
+        reservations:
+          devices: [{ driver: nvidia, count: 1, capabilities: [gpu] }]
+    restart: unless-stopped
+    # api reaches it as http://llm:8001/v1 - add `networks: {default: {aliases: [llm]}}` or set LOCAL_LLM_BASE_URL.
+
+  nginx:
+    profiles: ["edge"]
+    image: nginx:1.27-alpine
+    volumes: ["./deploy/nginx.conf:/etc/nginx/conf.d/default.conf:ro"]
+    ports: ["80:80"]
+    depends_on: [api]
+    restart: unless-stopped
+
+volumes:
+  redis-data:
+  hf-cache:

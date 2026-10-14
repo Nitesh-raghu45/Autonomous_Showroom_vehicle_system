@@ -1,0 +1,193 @@
+{
+ "_comment": "Approximate MODEL-level attributes used for deterministic 'SUV / hatchback / 7-seater' filtering. Not per-variant; edit freely - loaded at startup.",
+ "Maruti Suzuki": {
+  "Swift": [
+   "hatchback",
+   5
+  ],
+  "Baleno": [
+   "hatchback",
+   5
+  ],
+  "Dzire": [
+   "sedan",
+   5
+  ],
+  "Ertiga": [
+   "mpv",
+   7
+  ],
+  "Fronx": [
+   "suv",
+   5
+  ],
+  "Grand Vitara": [
+   "suv",
+   5
+  ]
+ },
+ "Tata": {
+  "Altroz": [
+   "hatchback",
+   5
+  ],
+  "Curvv EV": [
+   "suv",
+   5
+  ],
+  "Harrier": [
+   "suv",
+   5
+  ],
+  "Nexon": [
+   "suv",
+   5
+  ],
+  "Nexon EV": [
+   "suv",
+   5
+  ],
+  "Punch": [
+   "suv",
+   5
+  ],
+  "Safari": [
+   "suv",
+   7
+  ]
+ },
+ "Hyundai": {
+  "Creta": [
+   "suv",
+   5
+  ],
+  "Exter": [
+   "suv",
+   5
+  ],
+  "Tucson": [
+   "suv",
+   5
+  ],
+  "Venue": [
+   "suv",
+   5
+  ],
+  "Verna": [
+   "sedan",
+   5
+  ],
+  "i20": [
+   "hatchback",
+   5
+  ]
+ },
+ "Kia": {
+  "Carens": [
+   "mpv",
+   7
+  ],
+  "Carnival": [
+   "mpv",
+   7
+  ],
+  "EV6": [
+   "suv",
+   5
+  ],
+  "Seltos": [
+   "suv",
+   5
+  ],
+  "Sonet": [
+   "suv",
+   5
+  ]
+ },
+ "MG": {
+  "Gloster": [
+   "suv",
+   7
+  ],
+  "Hector": [
+   "suv",
+   5
+  ],
+  "ZS EV": [
+   "suv",
+   5
+  ]
+ },
+ "Mahindra": {
+  "BE 6e": [
+   "suv",
+   5
+  ],
+  "Scorpio-N": [
+   "suv",
+   7
+  ],
+  "Thar": [
+   "suv",
+   4
+  ],
+  "XUV700": [
+   "suv",
+   7
+  ]
+ },
+ "Honda": {
+  "Amaze": [
+   "sedan",
+   5
+  ],
+  "City": [
+   "sedan",
+   5
+  ],
+  "City e:HEV": [
+   "sedan",
+   5
+  ]
+ },
+ "Toyota": {
+  "Fortuner": [
+   "suv",
+   7
+  ],
+  "Innova Crysta": [
+   "mpv",
+   7
+  ],
+  "Urban Cruiser Hyryder": [
+   "suv",
+   5
+  ]
+ },
+ "BMW": {
+  "3 Series": [
+   "sedan",
+   5
+  ],
+  "5 Series": [
+   "sedan",
+   5
+  ],
+  "523D": [
+   "sedan",
+   5
+  ],
+  "X1": [
+   "suv",
+   5
+  ],
+  "X5": [
+   "suv",
+   5
+  ],
+  "iX": [
+   "suv",
+   5
+  ]
+ }
+}

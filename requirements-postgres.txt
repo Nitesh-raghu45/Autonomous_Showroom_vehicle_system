@@ -1,0 +1,2 @@
+# Optional: only needed when DATABASE_URL is set (Postgres write-behind, experimental)
+asyncpg>=0.29.0
