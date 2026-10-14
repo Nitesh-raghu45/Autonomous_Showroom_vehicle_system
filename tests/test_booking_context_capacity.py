@@ -81,3 +81,33 @@ async def test_variant_followup_and_misspelled_relative_date_booking(client):
 async def test_24_hour_customers_get_24_hour_replies(client):
     d = await chat(client, "10011", "book a test drive on 25th September at 21:30", "s-24h")
     assert "21:30 is outside our booking hours (08:00-20:00)" in d["answer"]
+
+
+async def test_finance_question_offers_and_books_a_callback(client):
+    sid, cid = "s-finance", "10012"
+    d = await chat(client, cid, "show me financing option", sid)
+    assert "finance team" in d["answer"] and "callback" in d["answer"] and d["action"] is None
+
+    d = await chat(client, cid, "yes", sid)
+    assert "what date and time" in d["answer"].lower() and d["action"] is None
+
+    d = await chat(client, cid, "tomorrow at 11 AM", sid)                # TODAY_OVERRIDE = 2026-09-18
+    assert d["action"]["type"] == "BOOK_APPOINTMENT"
+    res = d["action"]["result"]
+    assert res["appointment_type"] == "CALLBACK" and res["date"] == "2026-09-19" and res["time"] == "11:00"
+    assert "Finance" in res["notes"] and "at 11 AM" in d["answer"]
+
+
+async def test_exchange_question_accepts_yes_with_time_or_no(client):
+    d = await chat(client, "10013", "what about exchange details", "s-exch-1")
+    assert "exchange team" in d["answer"]
+    d = await chat(client, "10013", "yes, day after tomorrow at 4pm", "s-exch-1")
+    assert d["action"]["type"] == "BOOK_APPOINTMENT"
+    assert d["action"]["result"]["appointment_type"] == "CALLBACK" and "Exchange" in d["action"]["result"]["notes"]
+
+    d = await chat(client, "10013", "do you have exchange offers on creta", "s-exch-2")
+    assert "exchange team" in d["answer"]
+    d = await chat(client, "10013", "no", "s-exch-2")
+    assert d["action"] is None and "left everything" in d["answer"]
+    d = await chat(client, "10013", "show me SUVs under 20 lakhs", "s-exch-2")   # back to normal browsing
+    assert d["action"] is None or d["action"]["type"] != "BOOK_APPOINTMENT"

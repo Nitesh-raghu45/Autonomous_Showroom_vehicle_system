@@ -223,6 +223,37 @@ def appointments_answer(rec: dict[str, Any], appts: list[dict[str, Any]], cap: i
 # refusals / clarifications
 # ---------------------------------------------------------------------------
 
+# Topics we hold no data for but a human team handles: instead of a dead end, offer a callback.
+# (Rates, EMIs and trade-in values are never quoted here - only a person can give those.)
+_HANDOFF_TOPICS: list[tuple[str, re.Pattern[str]]] = [
+    ("exchange", re.compile(r"exchange|trade[\s-]?in|old car|valuation|sell my")),
+    ("finance", re.compile(r"financ|\bloan|\bemi\b|tenure|\bbank|credit score|cibil|down ?payment|interest")),
+]
+HANDOFF_NOTES = {
+    "finance": "Finance / EMI enquiry - callback requested via chat",
+    "exchange": "Exchange / trade-in enquiry - callback requested via chat",
+}
+
+
+def handoff_topic(topic: str | None) -> str | None:
+    low = (topic or "").lower()
+    return next((name for name, rx in _HANDOFF_TOPICS if rx.search(low)), None)
+
+
+def handoff_offer(kind: str, ampm: bool = True) -> str:
+    from .router.when import hours_range
+    hrs = hours_range(ampm, " and ")
+    # Always say plainly that we hold no such data before offering the hand-off.
+    if kind == "exchange":
+        head = ("That isn't on your record - exchange (trade-in) offers depend on an inspection of your current "
+                "car, so our exchange team handles those and I can't quote a value here.")
+    else:
+        head = ("That isn't on your record - financing options, EMIs and loan approvals are handled by our "
+                "finance team, so I can't quote rates or EMIs here.")
+    return (f"{head}\n\nShall I book a **callback** with them? Just tell me a date and time "
+            f"(between {hrs}) - for example \"tomorrow at 11 AM\".")
+
+
 def not_in_record(topic: str | None = None) -> str:
     low_topic = (topic or "").lower()
     if any(w in low_topic for w in ("quot", "price", "proposal", "cost")):

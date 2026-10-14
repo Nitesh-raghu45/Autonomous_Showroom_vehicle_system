@@ -313,7 +313,7 @@ def _is_filter_only_refinement(low: str) -> bool:
 # ---- record (read) family ----------------------------------------------------------
 
 _NOT_IN_RECORD = re.compile(
-    r"salesperson'?s? (e-?mail|mail|phone|number|mobile|contact)|contact (details|number|info) (of|for) (my |the )?(salesperson|sales)|reduce (the )?price|lower (the )?price|bargain|haggle|price match|best (price|deal)|too expensive|verified|verification|credit score|cibil|\bloan\b|tenure|aadhaar|aadhar|\bpan\b|insurance|relationship manager|discount|negoti|trade[\s-]?in|warranty|"
+    r"salesperson'?s? (e-?mail|mail|phone|number|mobile|contact)|contact (details|number|info) (of|for) (my |the )?(salesperson|sales)|reduce (the )?price|lower (the )?price|bargain|haggle|price match|best (price|deal)|too expensive|verified|verification|credit score|cibil|\bloan\b|tenure|aadhaar|aadhar|\bpan\b|insurance|relationship manager|discount|negoti|trade[\s-]?in|\bexchange\b|sell my (?:old )?car|(?:value|valuation|worth) of my (?:old |current )?car|my (?:old |current )?car'?s? (?:value|valuation|worth)|warranty|"
     r"home address|postal address|street address|residential|which bank|\bbank\b|financ(e|ing)|previous owner|colou?r (did|do) i|colou?r i (selected|chose|picked)|lifetime spend|total spend|"
     r"kilomet\w+ (have )?i|\bkm i\b|how many times .*(visited|visit)|visited the showroom|\bemi\b|on[\s-]?road|"
     r"refund|complaint status|birthday|\bage\b of me|date of birth|\bdob\b|gender|occupation|income|salary|down ?payment amount"
@@ -804,6 +804,8 @@ def _context_variant_ids(low: str, ctx: RouteContext) -> list[str]:
     return [r["stock_id"] for r in scope if (r["model"], r.get("variant")) in found]
 
 
+_HANDOFF_Q = re.compile(r"\b(?:financ\w*|loans?|emis?|exchange|trade[\s-]?in)\b")
+
 ROUTER_MAX_CHARS = 1000
 
 
@@ -890,6 +892,13 @@ def route(question: str, ctx: RouteContext) -> Route:
             if _INVENTORY_FOLLOWUP.search(low):
                 result.slots["mode"] = "models"
             return result
+    # "exchange offers on the Creta?" / "Nexon on EMI?" - a finance/exchange question even when it
+    # names a car; we hold no such data, so it gets the team-callback offer, not a stock listing.
+    hm = _HANDOFF_Q.search(low)
+    if hm and not (_BOOK_VERB.search(low) or _CANCEL_VERB.search(low)):
+        if not ctx.customer_bound:
+            return Route(NEED_CUSTOMER, {}, "guest")
+        return Route(NOT_IN_RECORD, {"topic": hm.group(0)}, "finance/exchange handoff")
     cv = context_variant_route(low, ctx)
     if cv is not None:
         return cv

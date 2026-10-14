@@ -66,7 +66,16 @@ async def handle(route: Route, t: Turn) -> Result:
     if it == I.NEED_CUSTOMER:
         return Result(render.NEED_CUSTOMER_TEXT)
     if it == I.NOT_IN_RECORD:
-        return Result(render.not_in_record(topic=s.get("topic") or t.question))
+        topic = s.get("topic") or t.question
+        kind = render.handoff_topic(topic)
+        if kind and t.cid:
+            # No finance/exchange data here - offer a callback with the team that has it. The
+            # pending booking lets "yes", "tomorrow at 11am" or "yes, tomorrow 11am" complete it.
+            return Result(render.handoff_offer(kind), pending={
+                "type": "BOOK_APPOINTMENT", "appointment_type": "CALLBACK",
+                "notes": render.HANDOFF_NOTES[kind], "ampm": True, "turns_left": 2,
+            })
+        return Result(render.not_in_record(topic=topic))
     if it == I.CLARIFY:
         name = ((rec.get("customer") or {}).get("name") if t.cid else None)
         extra = {key: value for key, value in s.items() if key != "kind"}
@@ -113,5 +122,11 @@ async def handle(route: Route, t: Turn) -> Result:
             return Result(f"Should {pending.get('number')} be your primary or your alternate number? Reply 'primary' or 'alternate'.")
         if pending.get("type") == "CANCEL_APPOINTMENT":
             return await actions.cancel_confirm(t.cid, pending)
+        if pending.get("type") == "BOOK_APPOINTMENT":
+            # "yes" to a booking question that still needs a date/time: ask for it, keep the booking open
+            from .router.when import hours_range
+            label = render.TYPE_LABEL.get(pending.get("appointment_type"), "appointment").lower()
+            return Result(f"Great - what date and time suits you for the {label}? "
+                          f"(between {hours_range(pending.get('ampm'), ' and ')})", pending=pending)
         return Result("That request has expired - please ask again.", clear_pending=True)
     return Result(render.clarify(""))
